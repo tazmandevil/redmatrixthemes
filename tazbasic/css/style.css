@@ -29,8 +29,8 @@ aside {
 	padding: 10px;
 }
 
-div#profile-content-wrapper.generic-content-wrapper {
-	background-color: #fff!important;
+section {
+	background-color: #f8eee4!important;
 	color: #444444;
 	-moz-border-radius:5px;
 	border-radius:5px;
