@@ -921,13 +921,13 @@ footer {
 
 .thread-wrapper .wall-item-comment-wrapper {
 	margin-left: 50px;
-	width:800px;
+	width:700px;
 }
 
 /* Give the top level post bigger shadows than the comments.  This makes them appear "higher" and the comments "lower", which separates posts from each other reasonably without literally drawing a line under it */
 
 .wall-item-content-wrapper {
-	width: 950px;
+	width: 850px;
 	margin-top: 10px;
 	position: relative;
 	border-radius: $radiuspx;
