@@ -26,6 +26,15 @@ aside {
 	color: #444444;
 	-moz-border-radius: 3px; 
 	border-radius: 3px;
+	padding: 10px;
+}
+
+div#profile-content-wrapper.generic-content-wrapper {
+	background-color: #fff!important;
+	color: #444444;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	padding: 20px;
 }
 
 /* icons */
@@ -309,6 +318,7 @@ nav #nav-link-wrapper .nav-link {
 }
 
 .tabs li { margin: 0px; list-style: none; }
+
 .tab {
 	display:block;
 	float:left;
@@ -3611,3 +3621,4 @@ margin: 20px;
 .pmenu li {
 	margin-left: -20px;
 }
+
