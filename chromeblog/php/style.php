@@ -5,38 +5,38 @@
 	$uid = get_theme_uid();
 
 	if($uid)
-	    load_pconfig($uid,'blogbasic');
+	    load_pconfig($uid,'chromeblog');
 
     $line_height = false;
-    $blogbasic_font_size = false;
+    $chromeblog_font_size = false;
     $resolution = false;
     $navcolour = false;
     $linkcolour = false;
 	$radius = 5;
-    $site_line_height = get_config("blogbasic","line_height");
-    $site_blogbasic_font_size = get_config("blogbasic", "font_size" );
-    $navcolour = get_config("blogbasic", "navcolour" );
-    $linkcolour = get_config("blogbasic", "linkcolour" );
+    $site_line_height = get_config("chromeblog","line_height");
+    $site_chromeblog_font_size = get_config("chromeblog", "font_size" );
+    $navcolour = get_config("chromeblog", "navcolour" );
+    $linkcolour = get_config("chromeblog", "linkcolour" );
     $background = false;
 
-	$x = get_config('blogbasic','radius');
+	$x = get_config('chromeblog','radius');
 	if($x !== false)
 		$radius = $x;
     
     if ($uid) {
-        $background = get_pconfig($uid, "blogbasic", "background");
-        $line_height = get_pconfig($uid, "blogbasic","line_height");
-        $blogbasic_font_size = get_pconfig($uid, "blogbasic", "font_size");
-        $navcolour = get_pconfig($uid, "blogbasic", "navcolour");
-        $linkcolour = get_pconfig($uid, "blogbasic", "linkcolour");
-		$x = get_pconfig($uid,'blogbasic','radius');
+        $background = get_pconfig($uid, "chromeblog", "background");
+        $line_height = get_pconfig($uid, "chromeblog","line_height");
+        $chromeblog_font_size = get_pconfig($uid, "chromeblog", "font_size");
+        $navcolour = get_pconfig($uid, "chromeblog", "navcolour");
+        $linkcolour = get_pconfig($uid, "chromeblog", "linkcolour");
+		$x = get_pconfig($uid,'chromeblog','radius');
 		if($x !== false)
 			$radius = $x;
 
     // In non-expert mode, we just let them choose font size, line height, and a colour scheme.  A colour scheme is just a pre-defined set of the above variables.
     // But only apply these settings in non-expert mode to prevent confusion when turning expert mode on and off.
     if(! feature_enabled($uid,'expert')) {
-	    if ($colour_scheme === 'blogbasic'){$navcolour = 'red';}
+	    if ($colour_scheme === 'chromeblog'){$navcolour = 'red';}
 		$shadows = false;
 		$radius = 5;
 }
@@ -52,13 +52,13 @@
 	}
 
 // This is probably the easiest place to apply global settings.  Don't bother with site line height and such.  Instead, check pconfig for global user settings.  
-// eg, if ($blogbasic_font_size === false) {$blogbasic_font_size = get_pconfig($uid, "global", "font_size");  If it's not set, we'll just use the CSS with no changes.
+// eg, if ($chromeblog_font_size === false) {$chromeblog_font_size = get_pconfig($uid, "global", "font_size");  If it's not set, we'll just use the CSS with no changes.
 // Then all you need to do is add a "Global Settings" tab to settings/display, and make an equivalent of theme_settings.tpl and config.php to be loaded there.  Easy.
 
     if ($line_height === false) {$line_height = $site_line_height;}
     if ($line_height === false) {$line_height = "1.2";}
-    if ($blogbasic_font_size === false) {$blogbasic_font_size = $site_blogbasic_font_size;}
-    if ($blogbasic_font_size === false) {$blogbasic_font_size = "12";}
+    if ($chromeblog_font_size === false) {$chromeblog_font_size = $site_chromeblog_font_size;}
+    if ($chromeblog_font_size === false) {$chromeblog_font_size = "12";}
 	    if ($navcolour === "black") {$nav_bg_1 = "000";
 			      $nav_bg_2 = "2e2f2e";}
 
@@ -79,8 +79,8 @@
 
 // Enforce sane limits for expert mode - otherwise we'll end up with "experts" who think font size is a percentage.
 
-	if(($blogbasic_font_size >= 8.0) && ($blogbasic_font_size <= 20.0)) {
-		echo ".wall-item-content { font-size: ${blogbasic_font_size}px;}\r\n";
+	if(($chromeblog_font_size >= 8.0) && ($chromeblog_font_size <= 20.0)) {
+		echo ".wall-item-content { font-size: ${chromeblog_font_size}px;}\r\n";
 	}
 
 	if(($line_height >= 1.0) && ($line_height <= 2.0)) {

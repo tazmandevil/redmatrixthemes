@@ -1,7 +1,7 @@
 /**
- * BlogBasic 
+ * antiqueblog 
  *
- * Basic blog theme
+ * antiqueblog theme
  * by tazman@tazmandevil.info
  */
 
@@ -10,8 +10,7 @@
 body {
 	background-color: #fff;
 	background-image: url('../img/background.jpg');
-	background-repeat: repeat; 
-	background-attachment: fixed;
+	background-repeat: repeat;
 	font-size: 12px;
 	font-family: arial,freesans,clean,sans-serif;
 	margin:auto;
@@ -32,7 +31,7 @@ abbr {
 }
 
 aside {
-	background-color: #eee;
+	background-color: #fff8e8;
 	border: none;
 	color: #222;
 	-moz-border-radius: 3px; 
@@ -41,7 +40,7 @@ aside {
 }
 
 section {
-	background-color: #eee!important;
+	background-color: #fff8e8!important;
 	color: #444444;
 	width:950px;
 	-moz-border-radius:5px;

@@ -14,5 +14,5 @@
 {{include file="field_input.tpl" field=$radius}}
 
 <div class="settings-submit-wrapper">
-	<input type="submit" value="{{$submit}}" class="settings-submit" name="blogbasic-settings-submit" />
+	<input type="submit" value="{{$submit}}" class="settings-submit" name="chromeblog-settings-submit" />
 </div>
