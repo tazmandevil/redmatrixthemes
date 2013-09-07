@@ -32,7 +32,7 @@
 		$x = get_pconfig($uid,'blogbasic','radius');
 		if($x !== false)
 			$radius = $x;
-
+    }
     // In non-expert mode, we just let them choose font size, line height, and a colour scheme.  A colour scheme is just a pre-defined set of the above variables.
     // But only apply these settings in non-expert mode to prevent confusion when turning expert mode on and off.
     if(! feature_enabled($uid,'expert')) {
@@ -108,4 +108,3 @@
 	  if ($linkcolour != false) {
 		    echo "a, a:visited, a:link, .fakelink, .fakelink:visited, .fakelink:link {color: #$linkcolour;}\r\n";
 	}
-    }	
