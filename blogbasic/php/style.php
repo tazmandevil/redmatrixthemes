@@ -20,6 +20,8 @@
     $background = false;
     $asect = false;
     $astext = false;
+    $shadows = true;
+    $shadows = get_config("blogbasic", "shadow" );
 
 	$x = get_config('blogbasic','radius');
 	if($x !== false)
@@ -36,15 +38,26 @@
 			$radius = $x;
 	$asect = get_pconfig($uid, 'blogbasic', 'asect');
 	$astext = get_pconfig($uid, 'blogbasic', 'astext');
+        $shadows = get_pconfig($uid, "blogbasic", "shadow");
     }
 
     // In non-expert mode, we just let them choose font size, line height, and a colour scheme.  A colour scheme is just a pre-defined set of the above variables.
     // But only apply these settings in non-expert mode to prevent confusion when turning expert mode on and off.
     if(! feature_enabled($uid,'expert')) {
 	    if ($colour_scheme === 'blogbasic'){$navcolour = 'red';}
-		$shadows = false;
+		$shadows = true;
 		$radius = 5;
 }
+
+// Minimum value shadows - they shouldn't all be the same size; just get it working, clean up later.
+	if($shadows === "true") {
+		echo "code, blockquote, .wall-item-content-wrapper, .wall-item-content-wrapper.comment, .wall-item-content img, #profile-jot-perms, #profile-jot-submit, .tab, .tab.active, .settings-widget li, .wall-item-photo, .photo, .contact-block-img, .my-comment-photo, #posted-date-selector:hover, .contact-entry-photo img, .profile-match-photo img, #photo-photo img, .directory-photo-img, .photo-album-photo, .photo-top-photo, .group-selected, .nets-selected, .fileas-selected, .categories-selected {
+		box-shadow: 5px 5px 5px #111;}\r\n
+		
+		.tab.active, #jot-title, #jot-category, .comment-edit-text-empty, .comment-edit-text-full, iframe#profile-jot-text_ifr, #profile-jot-text {
+		box-shadow: 5px 5px 5px #666 inset;}\r\n";
+	
+	}
 
 // background
 	if($background) {
