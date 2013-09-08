@@ -18,6 +18,7 @@
     $navcolour = get_config("blogbasic", "navcolour" );
     $linkcolour = get_config("blogbasic", "linkcolour" );
     $background = false;
+    $asect = false;
 
 	$x = get_config('blogbasic','radius');
 	if($x !== false)
@@ -32,7 +33,9 @@
 		$x = get_pconfig($uid,'blogbasic','radius');
 		if($x !== false)
 			$radius = $x;
+	$asect = get_pconfig($uid, 'blogbasic', 'asect');
     }
+
     // In non-expert mode, we just let them choose font size, line height, and a colour scheme.  A colour scheme is just a pre-defined set of the above variables.
     // But only apply these settings in non-expert mode to prevent confusion when turning expert mode on and off.
     if(! feature_enabled($uid,'expert')) {
@@ -44,12 +47,23 @@
 // background
 	if($background) {
 		echo "body {
-				background: url('${background}');
+				background-image: url('${background}')!important;
 				background-repeat: repeat;
 				background-attachment: fixed;
 				
-			}";
+			} \r\n";
 	}
+
+// section and aside bg color
+	if($asect) {
+		echo "
+		section {
+			background-color: #$asect!important;
+		}
+		aside {
+			background-color: #$asect!important;
+	} \r\n";
+}
 
 // This is probably the easiest place to apply global settings.  Don't bother with site line height and such.  Instead, check pconfig for global user settings.  
 // eg, if ($blogbasic_font_size === false) {$blogbasic_font_size = get_pconfig($uid, "global", "font_size");  If it's not set, we'll just use the CSS with no changes.

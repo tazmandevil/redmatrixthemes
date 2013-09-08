@@ -13,8 +13,9 @@ function theme_content(&$a) {
 	$linkcolour = get_pconfig(local_user(), 'blogbasic', 'linkcolour');
 	$iconset = get_pconfig(local_user(), 'blogbasic', 'iconset');
 	$radius = get_pconfig(local_user(),'blogbasic','radius');
+	$asect = get_pconfig(local_user(), 'blogbasic', 'asect');
 
-	return blogbasic_form($a, $font_size, $background, $line_height, $navcolour, $linkcolour, $iconset, $radius);
+	return blogbasic_form($a, $font_size, $background, $line_height, $navcolour, $linkcolour, $iconset, $radius, $asect);
 }
 
 function theme_post(&$a) {
@@ -28,11 +29,12 @@ function theme_post(&$a) {
 		set_pconfig(local_user(), 'blogbasic', 'linkcolour', $_POST['blogbasic_linkcolour']);
 		set_pconfig(local_user(), 'blogbasic', 'iconset', $_POST['blogbasic_iconset']);
 		set_pconfig(local_user(), 'blogbasic', 'radius', $_POST['blogbasic_radius']);
+		set_pconfig(local_user(), 'blogbasic', 'asect', $_POST['blogbasic_asect']);
 	}
 
 }
 
-function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, $linkcolour, $iconset, $radius) {
+function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, $linkcolour, $iconset, $radius, $asect) {
 	$line_heights = array(
 		"1.3" => "1.3",
 		"---" => "---",
@@ -85,6 +87,7 @@ function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, 
 		'$linkcolour' => array('blogbasic_linkcolour', t('Display colour of links - hex value, do not include the #'), $linkcolour, '', $linkcolours),
 		'$iconset' => array('blogbasic_iconset', t('Icons'), $iconset, '', $iconsets),
 		'$radius' => array('blogbasic_radius', t('Corner radius'), $radius, t('0-99 default: 5')),
+		'$asect' => array('blogbasic_asect', t('Section and Aside BG color (hex without #)'), $asect),
 	  ));}
 	 
 	 if(! feature_enabled(local_user(),'expert')) {
@@ -97,6 +100,7 @@ function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, 
 		'$background' => array('blogbasic_background', t('Set background image'), $background, '', $backgrounds),	
 		'$line_height' => array('blogbasic_line_height', t('Set line-height for posts and comments'), $line_height, '', $line_heights),
 		'$nav' => array('blogbasic_nav', t('Colour of the navigation bar'), $nav, '', $navs),
+		'$asect' => array('blogbasic_asect', t('Section and Aside BG color (hex without #'), $asect),
 	 ));}
 	 
 	return $o;

@@ -13,6 +13,8 @@
 
 {{include file="field_input.tpl" field=$radius}}
 
+{{include file="field_input.tpl" field=$asect}}
+
 <div class="settings-submit-wrapper">
 	<input type="submit" value="{{$submit}}" class="settings-submit" name="blogbasic-settings-submit" />
 </div>
