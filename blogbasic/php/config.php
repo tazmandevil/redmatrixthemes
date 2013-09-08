@@ -12,10 +12,11 @@ function theme_content(&$a) {
 	$navcolour = get_pconfig(local_user(), 'blogbasic', 'navcolour');
 	$linkcolour = get_pconfig(local_user(), 'blogbasic', 'linkcolour');
 	$iconset = get_pconfig(local_user(), 'blogbasic', 'iconset');
-	$radius = get_pconfig(local_user(),'blogbasic','radius');
-	$asect = get_pconfig(local_user(), 'blogbasic', 'asect');
+	$radius = get_pconfig(local_user(),'blogbasic','radius' );
+	$asect = get_pconfig(local_user(), 'blogbasic', 'asect' );
+	$astext = get_pconfig(local_user(), 'blogbasic', 'astext' );
 
-	return blogbasic_form($a, $font_size, $background, $line_height, $navcolour, $linkcolour, $iconset, $radius, $asect);
+	return blogbasic_form($a, $font_size, $background, $line_height, $navcolour, $linkcolour, $iconset, $radius, $asect, $astext);
 }
 
 function theme_post(&$a) {
@@ -30,11 +31,12 @@ function theme_post(&$a) {
 		set_pconfig(local_user(), 'blogbasic', 'iconset', $_POST['blogbasic_iconset']);
 		set_pconfig(local_user(), 'blogbasic', 'radius', $_POST['blogbasic_radius']);
 		set_pconfig(local_user(), 'blogbasic', 'asect', $_POST['blogbasic_asect']);
+		set_pconfig(local_user(), 'blogbasic', 'astext', $_POST['blogbasic_astext']);
 	}
 
 }
 
-function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, $linkcolour, $iconset, $radius, $asect) {
+function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, $linkcolour, $iconset, $radius, $asect, $astext) {
 	$line_heights = array(
 		"1.3" => "1.3",
 		"---" => "---",
@@ -44,6 +46,7 @@ function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, 
 		"1.2" => "1.2",
 		"1.1" => "1.1",
 	);	
+	
 	$font_sizes = array(
 		'12' => '12',
 		'14' => '14',
@@ -88,6 +91,7 @@ function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, 
 		'$iconset' => array('blogbasic_iconset', t('Icons'), $iconset, '', $iconsets),
 		'$radius' => array('blogbasic_radius', t('Corner radius'), $radius, t('0-99 default: 5')),
 		'$asect' => array('blogbasic_asect', t('Section and Aside BG color (hex without #)'), $asect),
+		'$astext' => array('blogbasic_astext', t('Text color in Aside and Section (hex without #)'), $astext),
 	  ));}
 	 
 	 if(! feature_enabled(local_user(),'expert')) {
@@ -101,6 +105,7 @@ function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, 
 		'$line_height' => array('blogbasic_line_height', t('Set line-height for posts and comments'), $line_height, '', $line_heights),
 		'$nav' => array('blogbasic_nav', t('Colour of the navigation bar'), $nav, '', $navs),
 		'$asect' => array('blogbasic_asect', t('Section and Aside BG color (hex without #'), $asect),
+		'$astext' => array('blogbasic_astext', t('Text color in Aside and Section (hex without #)'), $astext),
 	 ));}
 	 
 	return $o;

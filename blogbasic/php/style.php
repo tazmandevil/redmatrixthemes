@@ -19,6 +19,7 @@
     $linkcolour = get_config("blogbasic", "linkcolour" );
     $background = false;
     $asect = false;
+    $astext = false;
 
 	$x = get_config('blogbasic','radius');
 	if($x !== false)
@@ -34,6 +35,7 @@
 		if($x !== false)
 			$radius = $x;
 	$asect = get_pconfig($uid, 'blogbasic', 'asect');
+	$astext = get_pconfig($uid, 'blogbasic', 'astext');
     }
 
     // In non-expert mode, we just let them choose font size, line height, and a colour scheme.  A colour scheme is just a pre-defined set of the above variables.
@@ -62,6 +64,17 @@
 		}
 		aside {
 			background-color: #$asect!important;
+	} \r\n";
+}
+
+// section and aside font color
+	if($astext) {
+		echo "
+		section {
+			color: #$astext!important;
+		}
+		aside {
+			color: #$astext!important;
 	} \r\n";
 }
 
