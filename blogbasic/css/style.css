@@ -150,16 +150,17 @@ code {
 	display: block;
 	overflow: auto;
 	border: 1px solid #444;
-	background: #f8eee4;
-	color: #444;
+	background: #000;
+	color: #00ff00;
 	padding: 10px;
 	margin-top: 20px; 
 	max-width: 80%;
 }
 
 blockquote {
-	background-color: #ffebe9!important;
-	border-left: 4px solid #7e0000;
+	background-color: #eee!important;
+	color: #00000!important;
+	border-left: 4px solid #777777;
 	padding: 0.4em;
 }
 
@@ -951,6 +952,8 @@ footer {
 .wall-item-content-wrapper.comment {
 	background: #ffffff;
 	border-left: 1px solid #e0e0e0;
+	-moz-opacity:1.0!important;
+	opacity:1.0!important;
 
 }
 
