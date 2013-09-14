@@ -14,10 +14,11 @@ function theme_content(&$a) {
 	$iconset = get_pconfig(local_user(), 'blogbasic', 'iconset');
 	$radius = get_pconfig(local_user(),'blogbasic','radius' );
 	$asect = get_pconfig(local_user(), 'blogbasic', 'asect' );
+	$asectopacity = get_pconfig(local_user(), 'blogbasic', 'asectopacity' );
 	$astext = get_pconfig(local_user(), 'blogbasic', 'astext' );
 	$shadow = get_pconfig(local_user(), 'blogbasic', 'shadow' );
 
-	return blogbasic_form($a, $font_size, $background, $line_height, $navcolour, $linkcolour, $iconset, $radius, $asect, $astext, $shadow);
+	return blogbasic_form($a, $font_size, $background, $line_height, $navcolour, $linkcolour, $iconset, $radius, $asect, $asectopacity, $astext, $shadow);
 }
 
 function theme_post(&$a) {
@@ -32,13 +33,14 @@ function theme_post(&$a) {
 		set_pconfig(local_user(), 'blogbasic', 'iconset', $_POST['blogbasic_iconset']);
 		set_pconfig(local_user(), 'blogbasic', 'radius', $_POST['blogbasic_radius']);
 		set_pconfig(local_user(), 'blogbasic', 'asect', $_POST['blogbasic_asect']);
+		set_pconfig(local_user(), 'blogbasic', 'asectopacity', $_POST['blogbasic_asectopacity']);
 		set_pconfig(local_user(), 'blogbasic', 'astext', $_POST['blogbasic_astext']);
 		set_pconfig(local_user(), 'blogbasic', 'shadow', $_POST['blogbasic_shadow']);	
 	}
 
 }
 
-function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, $linkcolour, $iconset, $radius, $asect, $astext, $shadow) {
+function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, $linkcolour, $iconset, $radius, $asect, $asectopacity, $astext, $shadow) {
 	$line_heights = array(
 		"1.3" => "1.3",
 		"---" => "---",
@@ -99,6 +101,7 @@ function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, 
 		'$iconset' => array('blogbasic_iconset', t('Icons'), $iconset, '', $iconsets),
 		'$radius' => array('blogbasic_radius', t('Corner radius'), $radius, t('0-99 default: 5')),
 		'$asect' => array('blogbasic_asect', t('Section and Aside BG color (hex without #)'), $asect),
+		'$asectopacity' => array('blogbasic_asectopacity', t('Section and Aside BG opacity (float: 0.00 - 1.00)'), $asectopacity),
 		'$astext' => array('blogbasic_astext', t('Text color in Aside and Section (hex without #)'), $astext),
 		'$shadow' => array('blogbasic_shadow', t('Draw shadows'), $shadow, '', $shadows),
 	  ));}
@@ -113,7 +116,7 @@ function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, 
 		'$background' => array('blogbasic_background', t('Set background image'), $background, '', $backgrounds),	
 		'$line_height' => array('blogbasic_line_height', t('Set line-height for posts and comments'), $line_height, '', $line_heights),
 		'$nav' => array('blogbasic_nav', t('Colour of the navigation bar'), $nav, '', $navs),
-		'$asect' => array('blogbasic_asect', t('Section and Aside BG color (hex without #'), $asect),
+		'$asectopacity' => array('blogbasic_asectopacity', t('Section and Aside BG opacity (float: 0.00 - 1.00)'), $asectopacity),
 		'$astext' => array('blogbasic_astext', t('Text color in Aside and Section (hex without #)'), $astext),
 		'$shadow' => array('blogbasic_shadow', t('Draw shadows'), $shadow, '', $shadows),
 	 ));}
