@@ -1641,6 +1641,8 @@ tr.mceLast {
     border-radius: $radiuspx;
     -moz-border-radius: $radiuspx;
     box-shadow: 4px 4px 3px 0 #444444;
+    border: 1px solid #444444;
+    padding: 1px;
 }
 
 #sidebar-page-list .label {
