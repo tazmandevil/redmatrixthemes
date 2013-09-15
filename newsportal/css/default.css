@@ -11,15 +11,14 @@ aside {
 	margin-top:50px;
 	display: block;
 	width: 210px;
-	float:right;
-	margin-left:auto;
+	float:left;
 }
 
 right_aside {
+	margin-top:50px;
 	display: block;
 	width: 210px;
 	float:right;
-	margin-left:auto;
 }
 
 
@@ -34,7 +33,7 @@ section {
 
 #container {
 	margin:auto;
-	width:1240px;
+	width:1300px!important;
 	margin-bottom:15px!important;
 }
 

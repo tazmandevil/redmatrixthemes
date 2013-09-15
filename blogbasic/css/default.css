@@ -16,6 +16,14 @@ aside {
 }
 
 
+right_aside {
+	display: block;
+	width: 210px;
+	float:right;
+	margin-left:auto;
+}
+
+
 section {
 	margin-top:50px;
 	display: block;

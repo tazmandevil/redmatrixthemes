@@ -36,6 +36,15 @@ aside {
 	border-left: 1px solid #333;
 }
 
+
+right_aside {
+	background-color: #fff;
+	border: none;
+	color: #000;
+	padding: 10px;
+	border-left: 1px solid #333;
+}
+
 section {
 	background-color: #fff!important;
 	color: #000;

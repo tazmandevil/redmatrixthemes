@@ -1,7 +1,7 @@
 /**
- * BlogBasic 
+ * newsportal 
  *
- * Basic blog theme
+ * newsportal theme
  * by tazman@tazmandevil.info
  */
 
@@ -9,18 +9,15 @@
 /* generals */
 body {
 	background-color: #fff;
-	background-image: url('../img/background.jpg');
-	background-repeat: repeat; 
-	background-attachment: fixed;
 	font-size: 12px;
 	font-family: arial,freesans,clean,sans-serif;
 	margin:auto;
-	width:1250!important;
+	width:1400!important;
 }
 
 container {
 	margin:auto;
-	width:1240px;
+	width:1300px;
 	margin-bottom:15px!important;
 	border-color:black;
 	border-style:solid;
@@ -32,29 +29,25 @@ abbr {
 }
 
 aside {
-	background-color: #eee;
+	background-color: #fff;
 	border: none;
-	color: #222;
-	-moz-border-radius: 3px; 
-	border-radius: 3px;
+	color: #000;
 	padding: 10px;
+	border-right: 1px solid #333;
 }
 
 right_aside {
-	background-color: #eee;
+	background-color: #fff;
 	border: none;
-	color: #222;
-	-moz-border-radius: 3px; 
-	border-radius: 3px;
+	color: #000;
 	padding: 10px;
+	border-left: 1px solid #333;
 }
 
 section {
-	background-color: #eee;
-	color: #444444;
-	width:950px;
-	-moz-border-radius:5px;
-	border-radius:5px;
+	background-color: #fff!important;
+	color: #000;
+	width:780px;
 	padding: 20px;
 }
 
@@ -138,7 +131,7 @@ a, a:visited, a:link, .fakelink, .fakelink:visited, .fakelink:link {
 	text-decoration: none; 
 }
 
-a:hover, .fakelink:hover { color: #000; text-decoration: underline; }
+a:hover, .fakelink:hover { color: #333; text-decoration: underline; }
 
 .fakelink {
 	cursor: pointer;
@@ -157,19 +150,19 @@ img { border :0px; }
 code {
 	font-family: Courier, monospace;
 	display: block;
+	font-size: 110%;
 	overflow: auto;
-	border: 1px solid #444;
-	background: #000;
-	color: #00ff00;
+	border-left: 1px solid #444;
+	background: #eee;
+	color: #000;
 	padding: 10px;
 	margin-top: 20px; 
 	max-width: 80%;
 }
 
 blockquote {
-	background-color: #eee!important;
-	color: #00000!important;
-	border-left: 4px solid #777777;
+	background-color: #fff8ff!important;
+	border-left: 4px solid #7e0000;
 	padding: 0.4em;
 }
 
@@ -928,22 +921,22 @@ footer {
 
 .thread-wrapper .wall-item-comment-wrapper {
 	margin-left: 50px;
-	width:700px;
+	width:600px;
 }
 
 /* Give the top level post bigger shadows than the comments.  This makes them appear "higher" and the comments "lower", which separates posts from each other reasonably without literally drawing a line under it */
 
 .wall-item-content-wrapper {
-	width: 850px;
+	width: 760px;
 	margin-top: 10px;
 	position: relative;
 	border-radius: $radiuspx;
 	border: 1px solid #eec;
 
 	background: #fff; 
-	border-radius: 5px; 
+/**	border-radius: 5px; 
 	box-shadow: 12px 12px 12px #111; 
-	border-left: 1px solid #eec; 
+	border-left: 1px solid #eec; **/
 
 }
 .wall-item-content-wrapper.comment {
@@ -961,8 +954,6 @@ footer {
 .wall-item-content-wrapper.comment {
 	background: #ffffff;
 	border-left: 1px solid #e0e0e0;
-	-moz-opacity:1.0!important;
-	opacity:1.0!important;
 
 }
 
@@ -1650,8 +1641,6 @@ tr.mceLast {
     border-radius: $radiuspx;
     -moz-border-radius: $radiuspx;
     box-shadow: 4px 4px 3px 0 #444444;
-    border: 1px solid #444444;
-    padding: 1px;
 }
 
 #sidebar-page-list .label {
