@@ -1,7 +1,7 @@
 
-{{include file="field_input.tpl" field=$font_size}}
+{{include file="field_select.tpl" field=$font_size}}
 
-{{include file="field_input.tpl" field=$line_height}}
+{{include file="field_select.tpl" field=$line_height}}
 
 {{include file="field_select.tpl" field=$navcolour}}
 
