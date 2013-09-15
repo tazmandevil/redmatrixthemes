@@ -78,15 +78,6 @@ function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, 
 		  'black' => 'black',	
 	);
 	
-	$linkcolours = array (
-		    'blue' => 'blue',
-		    'red' => 'red',
-	);
-	
-	$iconsets = array (
-		    'default' => 'default',
-	);
-	
 	if(feature_enabled(local_user(),'expert')) {
 	  $t = get_markup_template('theme_settings.tpl');
 	  $o .= replace_macros($t, array(
