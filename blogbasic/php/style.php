@@ -19,6 +19,7 @@
     $linkcolour = get_config("blogbasic", "linkcolour" );
     $background = false;
     $asect = false;
+    $asectopacity = false;
     $astext = false;
     $shadows = true;
     $shadows = get_config("blogbasic", "shadow" );
@@ -37,6 +38,7 @@
 		if($x !== false)
 			$radius = $x;
 	$asect = get_pconfig($uid, 'blogbasic', 'asect');
+	$asectopacity = get_pconfig($uid, 'blogbasic', 'asectopacity');
 	$astext = get_pconfig($uid, 'blogbasic', 'astext');
         $shadows = get_pconfig($uid, "blogbasic", "shadow");
     }
@@ -82,6 +84,18 @@
 			background-color: #$asect!important;
 	} \r\n";
 }
+
+// section and aside bg opacity
+	if($asectopacity) {
+		echo "
+		section {
+			opacity: $asectopacity!important;
+		}
+		aside {
+			opacity: $asectopacity!important;
+	} \r\n";
+}
+
 
 // section and aside font color
 	if($astext) {

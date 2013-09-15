@@ -15,6 +15,8 @@
 
 {{include file="field_input.tpl" field=$asect}}
 
+{{include file="field_input.tpl" field=$asectopacity}}
+
 {{include file="field_input.tpl" field=$astext}}
 
 {{include file="field_select.tpl" field=$shadow}}
