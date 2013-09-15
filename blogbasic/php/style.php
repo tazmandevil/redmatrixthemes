@@ -93,6 +93,9 @@
 		}
 		aside {
 			opacity: $asectopacity!important;
+		}
+		right_aside {
+			opacity: $asectopacity!important;
 	} \r\n";
 }
 
