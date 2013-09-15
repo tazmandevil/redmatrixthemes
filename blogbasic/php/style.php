@@ -77,6 +77,9 @@
 		}
 		aside {
 			background-color: #$asect!important;
+		}
+		right_aside {
+			background-color: #$asect!important;
 	} \r\n";
 }
 
@@ -87,6 +90,9 @@
 			color: #$astext!important;
 		}
 		aside {
+			color: #$astext!important;
+		}
+		right_aside {
 			color: #$astext!important;
 	} \r\n";
 }
