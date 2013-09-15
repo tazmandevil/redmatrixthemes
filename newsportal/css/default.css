@@ -1,0 +1,42 @@
+
+nav {
+	height: 24px;
+	display: block;
+	position: fixed;
+/**	width: 100%;
+	z-index: 100; **/
+}
+
+aside {
+	margin-top:50px;
+	display: block;
+	width: 210px;
+	float:left;
+}
+
+right_aside {
+	margin-top:50px;
+	display: block;
+	width: 210px;
+	float:right;
+}
+
+
+section {
+	margin-top:50px;
+	display: block;
+	padding-bottom: 350px;
+	float:left;
+	margin-left:auto;
+	margin-bottom: 50px;
+}
+
+#container {
+	margin:auto;
+	width:1300px!important;
+	margin-bottom:15px!important;
+}
+
+.article {
+	margin:auto!important;
+}
