@@ -156,6 +156,7 @@ img { border :0px; }
 
 code {
 	font-family: Courier, monospace;
+	font-size: 120%;
 	display: block;
 	overflow: auto;
 	border: 1px solid #444;
