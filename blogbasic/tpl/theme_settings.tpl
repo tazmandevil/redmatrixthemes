@@ -9,8 +9,6 @@
 
 {{include file="field_input.tpl" field=$linkcolour}}
 
-{{include file="field_select.tpl" field=$iconset}}
-
 {{include file="field_input.tpl" field=$radius}}
 
 {{include file="field_input.tpl" field=$asect}}

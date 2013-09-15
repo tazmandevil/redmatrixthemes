@@ -74,8 +74,8 @@ function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, 
 
 
 	$navcolours = array (
-		  'red' => 'red',
-		  'black' => 'black',	
+		'red' => 'red',	
+		'black' => 'black',
 	);
 	
 	if(feature_enabled(local_user(),'expert')) {
