@@ -82,6 +82,9 @@
 		}
 		right_aside {
 			background-color: #$asect!important;
+		}
+		#nav-search-text {
+			background-color: #$asect!important;
 	} \r\n";
 }
 
@@ -95,6 +98,9 @@
 			opacity: $asectopacity!important;
 		}
 		right_aside {
+			opacity: $asectopacity!important;
+		}
+		#nav-search-text {
 			opacity: $asectopacity!important;
 	} \r\n";
 }
