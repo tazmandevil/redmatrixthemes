@@ -1,6 +1,7 @@
 <?php
 // theme: basicblog
-// by tazman@red.tazmandevil.info
+// by Tazman Deville / tazman@red.tazmandevil.info
+// and Stanislav Lechev / af@matrix.0xaf.org
 
 	$uid = get_theme_uid();
 
