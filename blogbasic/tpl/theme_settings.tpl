@@ -1,3 +1,20 @@
+<link rel="stylesheet" media="screen" type="text/css" href="/view/theme/blogbasic/colorpicker/css/colorpicker.css" />
+<script type="text/javascript" src="/view/theme/blogbasic/colorpicker/js/colorpicker.js"></script>
+<script>
+$(document).ready(function() {
+	$('#id_blogbasic_linkcolour, #id_blogbasic_asect, #id_blogbasic_astext').ColorPicker({
+		onSubmit: function(hsb, hex, rgb, el) {
+			$(el).val(hex);
+			$(el).ColorPickerHide();
+		},
+		onBeforeShow: function () {
+			$(this).ColorPickerSetColor(this.value);
+		}
+	}).bind('keyup', function(){
+		$(this).ColorPickerSetColor(this.value);
+	});
+});
+</script>
 
 {{include file="field_select.tpl" field=$font_size}}
 
