@@ -74,17 +74,8 @@ function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, 
 
 
 	$navcolours = array (
-		  'red' => 'red',
-		  'black' => 'black',	
-	);
-	
-	$linkcolours = array (
-		    'blue' => 'blue',
-		    'red' => 'red',
-	);
-	
-	$iconsets = array (
-		    'default' => 'default',
+		'red' => 'red',	
+		'black' => 'black',
 	);
 	
 	if(feature_enabled(local_user(),'expert')) {
@@ -101,7 +92,7 @@ function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, 
 		'$iconset' => array('blogbasic_iconset', t('Icons'), $iconset, '', $iconsets),
 		'$radius' => array('blogbasic_radius', t('Corner radius'), $radius, t('0-99 default: 5')),
 		'$asect' => array('blogbasic_asect', t('Section and Aside BG color (hex without #)'), $asect),
-		'$asectopacity' => array('blogbasic_asectopacity', t('Section and Aside BG opacity (float: 0.00 - 1.00)'), $asectopacity),
+		'$asectopacity' => array('blogbasic_asectopacity', t('Section and Aside BG opacity (float: 0.80 - 1.00)'), $asectopacity),
 		'$astext' => array('blogbasic_astext', t('Text color in Aside and Section (hex without #)'), $astext),
 		'$shadow' => array('blogbasic_shadow', t('Draw shadows'), $shadow, '', $shadows),
 	  ));}

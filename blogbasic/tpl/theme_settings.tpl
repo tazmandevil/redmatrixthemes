@@ -1,15 +1,13 @@
 
-{{include file="field_input.tpl" field=$font_size}}
+{{include file="field_select.tpl" field=$font_size}}
 
 {{include file="field_input.tpl" field=$background}}
 
-{{include file="field_input.tpl" field=$line_height}}
+{{include file="field_select.tpl" field=$line_height}}
 
 {{include file="field_select.tpl" field=$navcolour}}
 
 {{include file="field_input.tpl" field=$linkcolour}}
-
-{{include file="field_select.tpl" field=$iconset}}
 
 {{include file="field_input.tpl" field=$radius}}
 
