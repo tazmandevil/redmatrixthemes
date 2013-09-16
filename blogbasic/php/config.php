@@ -26,7 +26,7 @@ function theme_post(&$a) {
 
 	if (isset($_POST['blogbasic-settings-submit'])) {
 		set_pconfig(local_user(), 'blogbasic', 'font_size', $_POST['blogbasic_font_size']);
-		set_pconfig(local_user(), 'blogbasic', 'background', $_POST['blogbasic_background']);	
+		set_pconfig(local_user(), 'blogbasic', 'background', $_POST['blogbasic_background']);
 		set_pconfig(local_user(), 'blogbasic', 'line_height', $_POST['blogbasic_line_height']);
 		set_pconfig(local_user(), 'blogbasic', 'navcolour', $_POST['blogbasic_navcolour']);
 		set_pconfig(local_user(), 'blogbasic', 'linkcolour', $_POST['blogbasic_linkcolour']);
@@ -35,7 +35,7 @@ function theme_post(&$a) {
 		set_pconfig(local_user(), 'blogbasic', 'asect', $_POST['blogbasic_asect']);
 		set_pconfig(local_user(), 'blogbasic', 'asectopacity', $_POST['blogbasic_asectopacity']);
 		set_pconfig(local_user(), 'blogbasic', 'astext', $_POST['blogbasic_astext']);
-		set_pconfig(local_user(), 'blogbasic', 'shadow', $_POST['blogbasic_shadow']);	
+		set_pconfig(local_user(), 'blogbasic', 'shadow', $_POST['blogbasic_shadow']);
 	}
 
 }
@@ -44,74 +44,86 @@ function blogbasic_form(&$a, $font_size, $background, $line_height, $navcolour, 
 	$line_heights = array(
 		"1.3" => "1.3",
 		"---" => "---",
-		"1.6" => "1.6",				
-		"1.5" => "1.5",		
+		"1.6" => "1.6",
+		"1.5" => "1.5",
 		"1.4" => "1.4",
 		"1.2" => "1.2",
 		"1.1" => "1.1",
-	);	
-	
+	);
+
 	$font_sizes = array(
 		'12' => '12',
 		'14' => '14',
 		"---" => "---",
-		"16" => "16",		
-		"15" => "15",
-		'13.5' => '13.5',
-		'13' => '13',		
 		'12.5' => '12.5',
-		'12' => '12',
+		'13' => '13',
+		'13.5' => '13.5',
+		"15" => "15",
+		"16" => "16",
 	);
 
 	$colour_schemes = array(
-		'blogbasic' => 'blogbasic',		
+		'blogbasic' => 'blogbasic',
 	);
 
 	$shadows = array(
-		  'true' => 'Yes',
-		  'false' => 'No',
+		'true' => 'Yes',
+		'false' => 'No',
 	);
 
 
 	$navcolours = array (
-		'red' => 'red',	
+		'red' => 'red',
 		'black' => 'black',
+		'pink' => 'pink',
+		'green' => 'green',
+		'blue' => 'blue',
+		'purple' => 'purple',
+		'orange' => 'orange',
+		'brown' => 'brown',
+		'grey' => 'grey',
+		'gold' => 'gold',
 	);
-	
+
 	if(feature_enabled(local_user(),'expert')) {
-	  $t = get_markup_template('theme_settings.tpl');
-	  $o .= replace_macros($t, array(
-		'$submit' => t('Submit'),
-		'$baseurl' => $a->get_baseurl(),
-		'$title' => t("Theme settings"),
-		'$font_size' => array('blogbasic_font_size', t('Set font-size for posts and comments'), $font_size, '', $font_sizes),
-		'$background' => array('blogbasic_background', t('Set background image'), $background, '', $backgrounds),	
-		'$line_height' => array('blogbasic_line_height', t('Set line-height for posts and comments'), $line_height, '', $line_heights),
-		'$navcolour' => array('blogbasic_navcolour', t('Navigation bar colour'), $navcolour, '', $navcolours),
-		'$linkcolour' => array('blogbasic_linkcolour', t('Display colour of links - hex value, do not include the #'), $linkcolour, '', $linkcolours),
-		'$iconset' => array('blogbasic_iconset', t('Icons'), $iconset, '', $iconsets),
-		'$radius' => array('blogbasic_radius', t('Corner radius'), $radius, t('0-99 default: 5')),
-		'$asect' => array('blogbasic_asect', t('Section and Aside BG color (hex without #)'), $asect),
-		'$asectopacity' => array('blogbasic_asectopacity', t('Section and Aside BG opacity (float: 0.80 - 1.00)'), $asectopacity),
-		'$astext' => array('blogbasic_astext', t('Text color in Aside and Section (hex without #)'), $astext),
-		'$shadow' => array('blogbasic_shadow', t('Draw shadows'), $shadow, '', $shadows),
-	  ));}
-	 
-	 if(! feature_enabled(local_user(),'expert')) {
-	    $t = get_markup_template('basic_theme_settings.tpl');
-	    $o .= replace_macros($t, array(
-		'$submit' => t('Submit'),
-		'$baseurl' => $a->get_baseurl(),
-		'$title' => t("Theme settings"),
-		'$font_size' => array('blogbasic_font_size', t('Set font-size for posts and comments'), $font_size, '', $font_sizes),
-		'$background' => array('blogbasic_background', t('Set background image'), $background, '', $backgrounds),	
-		'$line_height' => array('blogbasic_line_height', t('Set line-height for posts and comments'), $line_height, '', $line_heights),
-		'$nav' => array('blogbasic_nav', t('Colour of the navigation bar'), $nav, '', $navs),
-		'$asectopacity' => array('blogbasic_asectopacity', t('Section and Aside BG opacity (float: 0.00 - 1.00)'), $asectopacity),
-		'$astext' => array('blogbasic_astext', t('Text color in Aside and Section (hex without #)'), $astext),
-		'$shadow' => array('blogbasic_shadow', t('Draw shadows'), $shadow, '', $shadows),
-	 ));}
-	 
+		$t = get_markup_template('theme_settings.tpl');
+		$o.= replace_macros($t, array(
+			'$submit' => t('Submit'),
+			'$baseurl' => $a->get_baseurl(),
+			'$title' => t("Theme settings"),
+			'$font_size' => array('blogbasic_font_size', t('Set font-size for posts and comments'), $font_size, '', $font_sizes),
+			'$background' => array('blogbasic_background', t('Set background image'), $background, '', $backgrounds),
+			'$line_height' => array('blogbasic_line_height', t('Set line-height for posts and comments'), $line_height, '', $line_heights),
+			'$navcolour' => array('blogbasic_navcolour', t('Navigation bar colour'), $navcolour, '', $navcolours),
+			'$linkcolour' => array('blogbasic_linkcolour', t('Display colour of links - hex value, do not include the #'), $linkcolour, '', $linkcolours),
+			'$iconset' => array('blogbasic_iconset', t('Icons'), $iconset, '', $iconsets),
+			'$radius' => array('blogbasic_radius', t('Corner radius'), $radius, t('0-99 default: 5')),
+			'$asect' => array('blogbasic_asect', t('Section and Aside BG color (hex without #)'), $asect),
+			'$asectopacity' => array('blogbasic_asectopacity', t('Section and Aside BG opacity (float: 0.80 - 1.00)'), $asectopacity),
+			'$astext' => array('blogbasic_astext', t('Text color in Aside and Section (hex without #)'), $astext),
+			'$shadow' => array('blogbasic_shadow', t('Draw shadows'), $shadow, '', $shadows),
+		));
+	}
+
+	if(! feature_enabled(local_user(),'expert')) {
+		$t = get_markup_template('basic_theme_settings.tpl');
+		$o .= replace_macros($t, array(
+			'$submit' => t('Submit'),
+			'$baseurl' => $a->get_baseurl(),
+			'$title' => t("Theme settings"),
+			'$font_size' => array('blogbasic_font_size', t('Set font-size for posts and comments'), $font_size, '', $font_sizes),
+			'$background' => array('blogbasic_background', t('Set background image'), $background, '', $backgrounds),
+			'$line_height' => array('blogbasic_line_height', t('Set line-height for posts and comments'), $line_height, '', $line_heights),
+			'$nav' => array('blogbasic_nav', t('Colour of the navigation bar'), $nav, '', $navs),
+			'$asectopacity' => array('blogbasic_asectopacity', t('Section and Aside BG opacity (float: 0.80 - 1.00)'), $asectopacity),
+			'$astext' => array('blogbasic_astext', t('Text color in Aside and Section (hex without #)'), $astext),
+			'$shadow' => array('blogbasic_shadow', t('Draw shadows'), $shadow, '', $shadows),
+		));
+	}
+
 	return $o;
 }
+
+// 0xAF: please leave the vim modeline here
+// vim: set tabstop=4 shiftwidth=4 softtabstop=4 sidescroll=4 noet :
 

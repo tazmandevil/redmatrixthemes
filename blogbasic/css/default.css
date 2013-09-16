@@ -15,14 +15,12 @@ aside {
 	margin-left:auto;
 }
 
-
 right_aside {
 	display: block;
 	width: 210px;
 	float:right;
 	margin-left:auto;
 }
-
 
 section {
 	margin-top:50px;
@@ -42,3 +40,6 @@ section {
 .article {
 	margin:auto!important;
 }
+
+/* vim: set ts=2 sw=2 ss=2 ff=unix fdm=marker : */
+
