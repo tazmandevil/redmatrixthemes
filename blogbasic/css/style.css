@@ -2,8 +2,7 @@
  * BlogBasic
  *
  * Basic blog theme
- * by Tazman Deville / tazman@tazmandevil.info
- * and Stanislav Lechev / af@matrix.0xaf.org
+ * by tazman@tazmandevil.info
  */
 
 
@@ -169,6 +168,7 @@ code {
 	margin-top: 20px;
 	max-width: 80%;
 }
+code a {color:#11ebff!important;}
 
 blockquote {
 	background-color: #eee!important;
