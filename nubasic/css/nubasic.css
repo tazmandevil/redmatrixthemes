@@ -1,0 +1,43 @@
+header #banner {
+	position: fixed;
+	top: 0;
+	width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#blog-banner {
+	position: relative;
+	margin-top: 75px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+nav.navbar { 
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+container {
+	width:1000px!important;
+	margin:auto;
+}
+
+aside input[type='text'] {
+ width: 174px;
+}
+
+section {
+	float:left;
+	max-width: 850px;
+	display: block;
+	padding-bottom: 350px;
+}
+
+aside,right_aside {
+	display:block;
+	float: right!important;
+	width: 200px!important;
+	border-left: 1px solid #333;
+}
+

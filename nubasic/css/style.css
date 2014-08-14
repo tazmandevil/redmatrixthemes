@@ -1,0 +1,85 @@
+/**
+ * nubasic
+ *
+ * Based on redbasic
+ * by tony baldwin | https://tonybaldwin.info
+ */
+
+body {
+	background-color: #fff;
+	font-size: $body_font_size;
+	color: $font_colour;
+	font-family: arial,freesans,clean,sans-serif;
+	margin:auto!important;
+	width:1100px!important;
+}
+
+a, a:visited, a:link, .fakelink, .fakelink:visited, .fakelink:link { 
+	font-weight: bold;
+	color: $link_colour; 
+	text-decoration: none; 
+}
+
+section {
+	color: #000;
+	max-width:840!important;
+	margin:auto;
+	padding:15px;
+}
+
+aside,right_aside {
+	float:right!important;
+	color: #000;
+	padding: 10px;
+	border-left: 1px solid #333;
+}
+
+code {
+	font-family: Courier, monospace;
+	display: block;
+	font-size: 110%;
+	overflow: auto;
+	border-left: 1px solid #444;
+	background: #000;
+	color: #00ff00;
+	padding: 10px;
+	margin-top: 20px; 
+	max-width: 75%;
+}
+code a {color:#11ebff!important;}
+
+blockquote {
+	background-color: #fff8ff!important;
+	border-left: 4px solid #7e0000;
+	padding: 0.4em;
+	font-size:110%!important;
+}
+
+.navbar-nav > li > a {padding-top:5px !important; padding-bottom:5px !important;}
+.navbar {min-height:25px !important;}
+nav img {
+height: 25px;
+width: 25px;
+margin: 2px 0px 1px 10px;
+border-radius: 0px;
+}
+.navbar-left{height: 30px;}
+.container-fluid {min-height:30px;}
+.collapse .navbar-collapse {min-height:30px;}
+#nav-search-text {margin:5px;}
+header #banner {margin-top:5px;}
+nav .dropdown-menu {
+top: 20px;}
+nav .badge {
+    position: relative;
+    top: -30px;
+    float: right;
+    font-size: 10px;
+    padding: 2px 6px;
+    cursor: pointer;
+}
+#jGrowl.top-right {
+	top: 30px;
+	right: 15px;
+}
+
